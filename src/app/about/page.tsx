@@ -31,7 +31,7 @@ export default function AboutPage() {
             </div>
             <h2 className="text-3xl font-bold text-[#0A192F] mb-4">Our Vision</h2>
             <p className="text-gray-600 leading-relaxed">
-              To be the world's most trusted logistics partner, recognized for our technological innovation, commitment to environmental sustainability, and unwavering focus on customer success.
+              To be the world&apos;s most trusted logistics partner, recognized for our technological innovation, commitment to environmental sustainability, and unwavering focus on customer success.
             </p>
           </div>
         </div>

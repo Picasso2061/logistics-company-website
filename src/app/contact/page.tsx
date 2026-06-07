@@ -6,7 +6,7 @@ export default function ContactPage() {
       <section className="bg-[#0A192F] text-white py-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-lg text-gray-300">We're here to help with all your logistics needs.</p>
+          <p className="text-lg text-gray-300">We&apos;re here to help with all your logistics needs.</p>
         </div>
       </section>
 

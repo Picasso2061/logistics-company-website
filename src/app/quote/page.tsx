@@ -47,20 +47,20 @@ export default function QuotePage() {
               <h2 className="text-2xl font-bold text-[#0A192F] mb-6 border-b pb-2">Sender Information</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
-                  <input required type="text" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]" placeholder="John Doe" />
+                  <label htmlFor="fullName" className="block text-sm font-semibold text-gray-900 dark:text-gray-200 mb-2">Full Name *</label>
+                  <input id="fullName" required type="text" className="w-full bg-white text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 transition-colors" placeholder="John Doe" />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Company Name</label>
-                  <input type="text" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]" placeholder="Acme Logistics" />
+                  <label htmlFor="companyName" className="block text-sm font-semibold text-gray-900 dark:text-gray-200 mb-2">Company Name</label>
+                  <input id="companyName" type="text" className="w-full bg-white text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 transition-colors" placeholder="Acme Logistics" />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
-                  <input required type="email" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]" placeholder="john@example.com" />
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-900 dark:text-gray-200 mb-2">Email Address *</label>
+                  <input id="email" required type="email" className="w-full bg-white text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 transition-colors" placeholder="john@example.com" />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
-                  <input required type="tel" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]" placeholder="+1 (555) 000-0000" />
+                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 dark:text-gray-200 mb-2">Phone Number *</label>
+                  <input id="phone" required type="tel" className="w-full bg-white text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 transition-colors" placeholder="+1 (555) 000-0000" />
                 </div>
               </div>
             </div>
@@ -70,18 +70,18 @@ export default function QuotePage() {
               <h2 className="text-2xl font-bold text-[#0A192F] mb-6 border-b pb-2">Shipment Details</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Pickup Location *</label>
-                  <input required type="text" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]" placeholder="City, State or ZIP" />
+                  <label htmlFor="pickupLocation" className="block text-sm font-semibold text-gray-900 dark:text-gray-200 mb-2">Pickup Location *</label>
+                  <input id="pickupLocation" required type="text" className="w-full bg-white text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 transition-colors" placeholder="City, State or ZIP" />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Delivery Location *</label>
-                  <input required type="text" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]" placeholder="City, State or ZIP" />
+                  <label htmlFor="deliveryLocation" className="block text-sm font-semibold text-gray-900 dark:text-gray-200 mb-2">Delivery Location *</label>
+                  <input id="deliveryLocation" required type="text" className="w-full bg-white text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 transition-colors" placeholder="City, State or ZIP" />
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Package Type *</label>
-                  <select required className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]">
+                  <label htmlFor="packageType" className="block text-sm font-semibold text-gray-900 dark:text-gray-200 mb-2">Package Type *</label>
+                  <select id="packageType" required className="w-full bg-white text-gray-900 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 transition-colors">
                     <option value="">Select type</option>
                     <option value="box">Box / Parcel</option>
                     <option value="pallet">Pallet</option>
@@ -90,16 +90,16 @@ export default function QuotePage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Weight (kg) *</label>
-                  <input required type="number" min="0" step="0.1" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]" placeholder="0.0" />
+                  <label htmlFor="weight" className="block text-sm font-semibold text-gray-900 dark:text-gray-200 mb-2">Weight (kg) *</label>
+                  <input id="weight" required type="number" min="0" step="0.1" className="w-full bg-white text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 transition-colors" placeholder="0.0" />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Dimensions (cm)</label>
-                  <input type="text" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]" placeholder="L x W x H" />
+                  <label htmlFor="dimensions" className="block text-sm font-semibold text-gray-900 dark:text-gray-200 mb-2">Dimensions (cm)</label>
+                  <input id="dimensions" type="text" className="w-full bg-white text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 transition-colors" placeholder="L x W x H" />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Qty *</label>
-                  <input required type="number" min="1" className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]" placeholder="1" />
+                  <label htmlFor="qty" className="block text-sm font-semibold text-gray-900 dark:text-gray-200 mb-2">Qty *</label>
+                  <input id="qty" required type="number" min="1" className="w-full bg-white text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 transition-colors" placeholder="1" />
                 </div>
               </div>
             </div>
@@ -110,20 +110,20 @@ export default function QuotePage() {
                 <h2 className="text-xl font-bold text-[#0A192F] mb-4 border-b pb-2">Delivery Options *</h2>
                 <div className="space-y-3">
                   <label className="flex items-center space-x-3 cursor-pointer">
-                    <input type="radio" name="delivery" value="standard" required className="w-4 h-4 text-[#FF6B00] focus:ring-[#FF6B00]" />
-                    <span className="text-gray-700">Standard Delivery</span>
+                    <input type="radio" name="delivery" value="standard" required className="w-4 h-4 text-blue-600 bg-white border-gray-300 focus:ring-blue-600 focus:ring-2 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 transition-colors" />
+                    <span className="text-gray-900 dark:text-gray-200">Standard Delivery</span>
                   </label>
                   <label className="flex items-center space-x-3 cursor-pointer">
-                    <input type="radio" name="delivery" value="express" className="w-4 h-4 text-[#FF6B00] focus:ring-[#FF6B00]" />
-                    <span className="text-gray-700">Express Delivery</span>
+                    <input type="radio" name="delivery" value="express" className="w-4 h-4 text-blue-600 bg-white border-gray-300 focus:ring-blue-600 focus:ring-2 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 transition-colors" />
+                    <span className="text-gray-900 dark:text-gray-200">Express Delivery</span>
                   </label>
                   <label className="flex items-center space-x-3 cursor-pointer">
-                    <input type="radio" name="delivery" value="sameday" className="w-4 h-4 text-[#FF6B00] focus:ring-[#FF6B00]" />
-                    <span className="text-gray-700">Same-Day Delivery</span>
+                    <input type="radio" name="delivery" value="sameday" className="w-4 h-4 text-blue-600 bg-white border-gray-300 focus:ring-blue-600 focus:ring-2 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 transition-colors" />
+                    <span className="text-gray-900 dark:text-gray-200">Same-Day Delivery</span>
                   </label>
                   <label className="flex items-center space-x-3 cursor-pointer">
-                    <input type="radio" name="delivery" value="international" className="w-4 h-4 text-[#FF6B00] focus:ring-[#FF6B00]" />
-                    <span className="text-gray-700">International Shipping</span>
+                    <input type="radio" name="delivery" value="international" className="w-4 h-4 text-blue-600 bg-white border-gray-300 focus:ring-blue-600 focus:ring-2 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 transition-colors" />
+                    <span className="text-gray-900 dark:text-gray-200">International Shipping</span>
                   </label>
                 </div>
               </div>
@@ -131,20 +131,20 @@ export default function QuotePage() {
                 <h2 className="text-xl font-bold text-[#0A192F] mb-4 border-b pb-2">Additional Services</h2>
                 <div className="space-y-3">
                   <label className="flex items-center space-x-3 cursor-pointer">
-                    <input type="checkbox" className="w-4 h-4 text-[#FF6B00] rounded focus:ring-[#FF6B00]" />
-                    <span className="text-gray-700">Insurance</span>
+                    <input type="checkbox" className="w-4 h-4 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-600 focus:ring-2 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 transition-colors" />
+                    <span className="text-gray-900 dark:text-gray-200">Insurance</span>
                   </label>
                   <label className="flex items-center space-x-3 cursor-pointer">
-                    <input type="checkbox" className="w-4 h-4 text-[#FF6B00] rounded focus:ring-[#FF6B00]" />
-                    <span className="text-gray-700">Fragile Handling</span>
+                    <input type="checkbox" className="w-4 h-4 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-600 focus:ring-2 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 transition-colors" />
+                    <span className="text-gray-900 dark:text-gray-200">Fragile Handling</span>
                   </label>
                   <label className="flex items-center space-x-3 cursor-pointer">
-                    <input type="checkbox" className="w-4 h-4 text-[#FF6B00] rounded focus:ring-[#FF6B00]" />
-                    <span className="text-gray-700">Warehousing</span>
+                    <input type="checkbox" className="w-4 h-4 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-600 focus:ring-2 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 transition-colors" />
+                    <span className="text-gray-900 dark:text-gray-200">Warehousing</span>
                   </label>
                   <label className="flex items-center space-x-3 cursor-pointer">
-                    <input type="checkbox" className="w-4 h-4 text-[#FF6B00] rounded focus:ring-[#FF6B00]" />
-                    <span className="text-gray-700">Customs Clearance</span>
+                    <input type="checkbox" className="w-4 h-4 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-600 focus:ring-2 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-500 transition-colors" />
+                    <span className="text-gray-900 dark:text-gray-200">Customs Clearance</span>
                   </label>
                 </div>
               </div>
@@ -152,11 +152,11 @@ export default function QuotePage() {
 
             {/* Message Box */}
             <div>
-              <h2 className="text-2xl font-bold text-[#0A192F] mb-4 border-b pb-2">Additional Instructions</h2>
-              <textarea rows={4} className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]" placeholder="Any specific requirements or details we should know about?"></textarea>
+              <label htmlFor="instructions" className="text-2xl font-bold text-[#0A192F] mb-4 border-b pb-2 block">Additional Instructions</label>
+              <textarea id="instructions" rows={4} className="w-full bg-white text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 transition-colors" placeholder="Any specific requirements or details we should know about?"></textarea>
             </div>
 
-            <button type="submit" disabled={isSubmitting} className="w-full bg-[#FF6B00] text-white py-4 rounded font-bold text-lg hover:bg-[#e66000] transition flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed">
+            <button type="submit" disabled={isSubmitting} className="w-full bg-blue-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed">
               {isSubmitting ? <><Loader2 className="animate-spin mr-2" /> Processing...</> : "Get My Quote"}
             </button>
           </form>
