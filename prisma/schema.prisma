@@ -1,0 +1,120 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+  engineType      = "library"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  CUSTOMER
+  STAFF
+  ADMIN
+}
+
+enum ShipmentStatus {
+  CREATED
+  PICKED_UP
+  PROCESSING
+  IN_TRANSIT
+  ARRIVED_AT_HUB
+  OUT_FOR_DELIVERY
+  DELIVERED
+  DELAYED
+  RETURNED
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  phone         String?
+  password      String?
+  role          Role      @default(CUSTOMER)
+  provider      String?   @default("credentials")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  shipmentsSent     Shipment[]     @relation("Sender")
+  shipmentsReceived Shipment[]     @relation("Receiver")
+  notifications     Notification[]
+}
+
+model Shipment {
+  id             String         @id @default(cuid())
+  trackingNumber String         @unique
+  senderId       String?
+  sender         User?          @relation("Sender", fields: [senderId], references: [id])
+  receiverId     String?
+  receiver       User?          @relation("Receiver", fields: [receiverId], references: [id])
+  receiverName   String
+  origin         String
+  destination    String
+  status         ShipmentStatus @default(CREATED)
+  weight         Float
+  dimensions     String?
+  packageType    String
+  price          Float
+  estimatedDate  DateTime?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  trackingEvents TrackingEvent[]
+}
+
+model TrackingEvent {
+  id          String         @id @default(cuid())
+  shipmentId  String
+  shipment    Shipment       @relation(fields: [shipmentId], references: [id])
+  status      ShipmentStatus
+  location    String
+  description String
+  timestamp   DateTime       @default(now())
+}
+
+model Quote {
+  id          String   @id @default(cuid())
+  senderName  String
+  companyName String?
+  email       String
+  phone       String
+  origin      String
+  destination String
+  packageType String
+  weight      Float
+  dimensions  String?
+  options     String?
+  createdAt   DateTime @default(now())
+}
+
+model Vehicle {
+  id           String   @id @default(cuid())
+  type         String
+  capacity     String
+  status       String   @default("AVAILABLE")
+  registration String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Contact {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  type      String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
