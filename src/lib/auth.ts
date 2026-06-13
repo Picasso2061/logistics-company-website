@@ -7,6 +7,30 @@ import { authConfig } from "./auth.config";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
+  callbacks: {
+    ...authConfig.callbacks,
+    async signIn({ user, account }) {
+      if (account?.provider === "google") {
+        if (!user.email) return false;
+        
+        const existingUser = await db.user.findUnique({
+          where: { email: user.email },
+        });
+
+        if (!existingUser) {
+          await db.user.create({
+            data: {
+              email: user.email,
+              name: user.name,
+              image: user.image,
+              provider: "google",
+            },
+          });
+        }
+      }
+      return true;
+    },
+  },
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
