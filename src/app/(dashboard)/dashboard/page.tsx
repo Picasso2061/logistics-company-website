@@ -30,10 +30,10 @@ const shipments = [
 ];
 
 const fleet = [
-  { id: "TRK-01", driver: "John Smith", type: "Heavy Duty", location: "Lagos-Ibadan Exp", status: "Active", fuel: "78%", maintenance: "Good" },
-  { id: "TRK-02", driver: "Sarah Connor", type: "Refrigerated", location: "Abuja Hub, FC", status: "Idle", fuel: "100%", maintenance: "Service Due" },
-  { id: "TRK-03", driver: "Mike Johnson", type: "Box Truck", location: "Apapa Port, LA", status: "Loading", fuel: "45%", maintenance: "Good" },
-  { id: "TRK-04", driver: "Tony Stark", type: "Heavy Duty", location: "Kaduna-Kano Exp", status: "Active", fuel: "92%", maintenance: "Excellent" },
+  { id: "TRK-01", driver: "John Smith", type: "Heavy Duty", location: "Lagos-Ibadan Exp", status: "Active", fuel: "78%", maintenance: "Good", latOffset: 0.02, lngOffset: -0.03 },
+  { id: "TRK-02", driver: "Sarah Connor", type: "Refrigerated", location: "Abuja Hub, FC", status: "Idle", fuel: "100%", maintenance: "Service Due", latOffset: -0.04, lngOffset: 0.05 },
+  { id: "TRK-03", driver: "Mike Johnson", type: "Box Truck", location: "Apapa Port, LA", status: "Loading", fuel: "45%", maintenance: "Good", latOffset: 0.01, lngOffset: 0.02 },
+  { id: "TRK-04", driver: "Tony Stark", type: "Heavy Duty", location: "Kaduna-Kano Exp", status: "Active", fuel: "92%", maintenance: "Excellent", latOffset: -0.01, lngOffset: -0.02 },
 ];
 
 export default function DashboardOverview() {
@@ -227,11 +227,10 @@ export default function DashboardOverview() {
               zoom={10}
               options={{ disableDefaultUI: true, mapId: "DEMO_MAP_ID" }}
             >
-              {fleet.map((vehicle, index) => {
-                // Generate some slightly random positions around NY for the demo fleet
+              {fleet.map((vehicle) => {
                 const pos = {
-                  lat: center.lat + (Math.random() - 0.5) * 0.1,
-                  lng: center.lng + (Math.random() - 0.5) * 0.1
+                  lat: center.lat + vehicle.latOffset,
+                  lng: center.lng + vehicle.lngOffset
                 };
                 return <Marker key={vehicle.id} position={pos} />;
               })}

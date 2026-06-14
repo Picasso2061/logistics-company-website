@@ -2,7 +2,7 @@
 
 import { Bell, Search } from "lucide-react";
 
-export default function Header({ user }: { user: any }) {
+export default function Header({ user }: { user?: { name?: string | null; role?: string | null; image?: string | null } | null }) {
 
   return (
     <header className="h-16 bg-white border-b border-gray-100 flex items-center justify-between px-6 shrink-0">
@@ -40,6 +40,7 @@ export default function Header({ user }: { user: any }) {
               {user?.role || "Logistics Manager"}
             </p>
           </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="h-8 w-8 rounded-full border border-gray-200"
             src={user?.image || "https://ui-avatars.com/api/?name=Admin+User&background=0A192F&color=fff"}
